@@ -27,12 +27,14 @@ class _TaskManagerScreenState extends State<TaskManagerScreen> {
   Task? newTask;
   Task? selectedTask;
 
+  //function load
   @override
   void initState() {
     super.initState();
     _loadTasks();
   }
 
+  //Function load task
   _loadTasks() async {
     final prefs = await SharedPreferences.getInstance();
     final taskList = prefs.getStringList('tasks');
@@ -46,6 +48,7 @@ class _TaskManagerScreenState extends State<TaskManagerScreen> {
     }
   }
 
+  //Function Add Task
   void _addTask(Task newTask) {
     setState(() {
       tasks.add(newTask);
